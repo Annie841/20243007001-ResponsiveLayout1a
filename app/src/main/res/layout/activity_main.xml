@@ -5,5 +5,16 @@
     android:orientation="vertical"
     android:background="#000000"
     android:fitsSystemWindows="false">
+    <!-- Lab1 top black block -->
+    <TextView
+        android:id="@+id/tvLab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/lab1"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="18sp" />
+
 
 </LinearLayout>
