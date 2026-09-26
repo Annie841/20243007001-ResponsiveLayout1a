@@ -8,143 +8,171 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
-    <!-- Top Label: Lab 1 -->
+    <!-- Lab 1 -->
     <TextView
         android:id="@+id/tvLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/lab1"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvHeader"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <!-- White Header Bar -->
+    <!-- Responsive Layout -->
     <TextView
         android:id="@+id/tvHeader"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/responsive_layout"
+        android:layout_height="0dp"
         android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/responsive_layout"
         android:textColor="#000000"
-        android:gravity="center"
-        android:paddingVertical="24dp"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvLab"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Horizontal Chain: Four coloured blocks with equal weight -->
-    <TextView
-        android:id="@+id/tvThis"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:text="@string/text_this"
-        android:background="#D60000"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tvIs"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintHorizontal_weight="1"/>
-
-    <TextView
-        android:id="@+id/tvIs"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:text="@string/text_is"
-        android:background="#0044DD"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/tvThis"
-        app:layout_constraintStart_toEndOf="@id/tvThis"
-        app:layout_constraintEnd_toStartOf="@id/tvMy"
-        app:layout_constraintHorizontal_weight="1"/>
-
-    <TextView
-        android:id="@+id/tvMy"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:text="@string/text_my"
-        android:background="#6A1B9A"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/tvThis"
-        app:layout_constraintStart_toEndOf="@id/tvIs"
-        app:layout_constraintEnd_toStartOf="@id/tvFirst"
-        app:layout_constraintHorizontal_weight="1"/>
-
-    <TextView
-        android:id="@+id/tvFirst"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:text="@string/text_first"
-        android:background="#FFD600"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="@id/tvThis"
-        app:layout_constraintStart_toEndOf="@id/tvMy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLab"
+        app:layout_constraintBottom_toTopOf="@id/rowColors"
+        app:layout_constraintVertical_weight="2" />
 
-    <!-- Middle Text: Android Application -->
+    <!-- Row containing This / Is / My / First -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rowColors"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintBottom_toTopOf="@id/tvApp"
+        app:layout_constraintVertical_weight="2">
+
+        <!-- This -->
+        <TextView
+            android:id="@+id/tvThis"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#D60000"
+            android:gravity="center"
+            android:text="@string/text_this"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvIs"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintHorizontal_chainStyle="spread" />
+
+        <!-- Is -->
+        <TextView
+            android:id="@+id/tvIs"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#0044DD"
+            android:gravity="center"
+            android:text="@string/text_is"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvThis"
+            app:layout_constraintEnd_toStartOf="@id/tvMy"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- My -->
+        <TextView
+            android:id="@+id/tvMy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#6A1B9A"
+            android:gravity="center"
+            android:text="@string/text_my"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvIs"
+            app:layout_constraintEnd_toStartOf="@id/tvFirst"
+            app:layout_constraintHorizontal_weight="1" />
+
+        <!-- First -->
+        <TextView
+            android:id="@+id/tvFirst"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFD600"
+            android:gravity="center"
+            android:text="@string/text_first"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvMy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Android Application -->
     <TextView
         android:id="@+id/tvApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:text="@string/android_application"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/tvThis"
-        app:layout_constraintBottom_toTopOf="@id/bottomWhiteBar"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/rowColors"
+        app:layout_constraintBottom_toTopOf="@id/bottomWhiteBar"
+        app:layout_constraintVertical_weight="5" />
 
-    <!-- Bottom white container for buttons -->
-    <TextView
+    <!-- Bottom white area -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomWhiteBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:paddingVertical="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <!-- Horizontal Chain: Two buttons with equal weight -->
-    <Button
-        android:id="@+id/btnChange"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/change"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintTop_toTopOf="@id/bottomWhiteBar"
-        app:layout_constraintBottom_toBottomOf="@id/bottomWhiteBar"
-        app:layout_constraintStart_toStartOf="@id/bottomWhiteBar"
-        app:layout_constraintEnd_toStartOf="@id/btnCancel"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintHorizontal_weight="1"/>
+        <!-- Change -->
+        <Button
+            android:id="@+id/btnChange"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/change"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnCancel"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toTopOf="@id/bottomWhiteBar"
-        app:layout_constraintBottom_toBottomOf="@id/bottomWhiteBar"
-        app:layout_constraintStart_toEndOf="@id/btnChange"
-        app:layout_constraintEnd_toEndOf="@id/bottomWhiteBar"
-        app:layout_constraintHorizontal_weight="1"/>
+        <!-- Cancel -->
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/btnChange"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
