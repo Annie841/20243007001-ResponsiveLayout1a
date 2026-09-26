@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Responsive Layout 2</string>
+
+    <string name="lab1">Lab 1</string>
+    <string name="responsive_layout">Responsive Layout 1</string>
+
+    <string name="text_this">This</string>
+    <string name="text_is">is</string>
+    <string name="text_my">my</string>
+    <string name="text_first">first</string>
+
+    <string name="android_application">Android Application</string>
+
+    <string name="change">Change</string>
+    <string name="cancel">Cancel</string>
+
+</resources>
